@@ -1,5 +1,5 @@
 # kaplan360-api
-kaplan360-api is an unofficial REST API for the Kaplan360 mobile application, I painstainly reversed the mobile application and looked through dozens of OpenAM/OpenIDM knowledgebase for 1-2 weeks. It is built using Node.js, Express.js, and uses ES6 syntax and Async-Await/Promise for code clarity and performance.
+kaplan360-api is an unofficial REST API for the Kaplan360 mobile application, I painstainly reverse-engineered the mobile application, and looked through dozens of OpenAM/OpenIDM knowledgebase for 1-2 weeks to chain the private API requests. It is built using Node.js, Express.js, and uses ES6 syntax and Async-Await/Promise for code clarity and performance.
 
 kaplan360-api offers a few key features:  
 - Straight-forward Basic authentication, no handling of complex multiple-chaining OAuth2 and OpenAM/OpenIDM REST API. 
