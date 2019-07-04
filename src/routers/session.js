@@ -16,17 +16,17 @@ router.post('/api/session/authenticate', async (req, res) => {
 
         const authorizationDecoded = Buffer.from(req.headers.authorization.replace('Basic ', ''), 'base64').toString().split(':')
 
-        const token = await authenticate({
+        const tokens = await authenticate({
             user: authorizationDecoded[0],
             pass: authorizationDecoded[1]
         })
 
         res.json({
             success: true,
-            token
+            payload: tokens
         })
     } catch (e) {
-        res.status(400).json({
+        res.status(401).json({
             error: {
                 code: res.statusCode,
                 message: e.message
@@ -42,27 +42,14 @@ router.post('/api/session/authenticate', async (req, res) => {
             throw new Error('The Bearer token provided has expired.')
         }
 
-        // User endpoint (AM/OpenAM)
-        // https://backstage.forgerock.com/knowledge/kb/book/b93241706
-        const response = await rq.post({
-            url: 'https://login.kaplan.com.sg/auth/json/authenticate?authIndexType=module&authIndexValue=mobileApp',
-            headers: {
-                'Oidc_id_token': req.headers.authorization.replace('Bearer ', '')
-            },
-            gzip: true,
-            json: true,
-            simple: false
+        const session_token = await refresh({
+            jwt: req.headers.authorization.replace('Bearer ', '')
         })
 
-        if (response.tokenId) {
-            res.json({
-                success: true,
-                session_token: response.tokenId
-            })
-        } else {
-            throw new Error('Authorization Required.')
-        }
-
+        res.json({
+            success: true,
+            payload: session_token
+        })
     } catch (e) {
         res.status(401).json({
             code: res.statusCode,

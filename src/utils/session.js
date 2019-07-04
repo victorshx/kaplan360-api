@@ -70,8 +70,28 @@ const authenticate = ({
 const refresh = ({
     jwt
 }) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            // User endpoint (AM/OpenAM)
+            // https://backstage.forgerock.com/knowledge/kb/book/b93241706
+            const session_token = await rq.post({
+                url: 'https://login.kaplan.com.sg/auth/json/authenticate?authIndexType=module&authIndexValue=mobileApp',
+                headers: {
+                    'Oidc_id_token': jwt
+                },
+                gzip: true,
+                json: true,
+                simple: false
+            })
 
+            if (session_token.tokenId) {
+                resolve(session_token.tokenId)
+            } else {
+                throw new Error('Authorization Required.')
+            }
+        } catch (e) {
+            reject(Error(e.message))
+        }
     })
 }
 module.exports = {

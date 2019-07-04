@@ -1,15 +1,19 @@
 {
   "name": "kaplan360",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "An unofficial REST API for the Kaplan360 mobile application written in Node.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "VEDDEV",
+    "email": "veddev@pm.me",
+    "url": "https://github.com/veddev0x"
+  },
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
     "helmet": "^3.18.0",
