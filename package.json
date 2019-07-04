@@ -1,0 +1,19 @@
+{
+  "name": "kaplan360",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.18.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
+  }
+}
