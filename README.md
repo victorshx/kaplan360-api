@@ -5,6 +5,7 @@ kaplan360-api offers a few key features:
 - Straight-forward Basic authentication, no handling of complex multiple-chaining OAuth2 and OpenAM/OpenIDM REST API. 
 - Extended Classroom Schedule data, up to a month! **(coming soon)**
 - Extended Attendance Status, view previous month and further! **(coming soon)**
+- Totally asynchronous and non-blocking code, it's up to 4X faster than the mobile application. 
  
 ## Installation
  
