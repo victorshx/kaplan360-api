@@ -3,10 +3,12 @@ kaplan360-api is an unofficial REST API for the Kaplan360 mobile application, I 
 
 kaplan360-api offers a few key features:
 - Intuitive API, we handle the complex multi-chaining OAuth2 and OpenAM/OpenIDM REST API for you. Built-in token refresh and error handling for OAuth2 Credentials and JWT expiry, no more finding error in a haystack.
-- Extended Classroom Schedule, from the first session to last session! **(coming soon)**
+- Extended Classroom Schedule, from the first session to last session!
 - Extended Attendance Status, view previous month and further! **(coming soon)**
-- Raw Profile Info.  **(coming soon)**
-- Totally asynchronous and non-blocking code, optimised for speed and performance. 
+- Get current university partner & level(Undergraduate, etc)
+- Raw Profile Info.
+- Keep-alive and gzip everywhere!
+- Totally asynchronous and non-blocking code, optimised for speed and performance.
  
 ## Installation
  
