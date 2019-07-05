@@ -3,7 +3,7 @@ kaplan360-api is an unofficial REST API for the Kaplan360 mobile application, I 
 
 kaplan360-api offers a few key features:  
 - Straight-forward Basic authentication, no handling of complex multiple-chaining OAuth2 and OpenAM/OpenIDM REST API. 
-- Extended Classroom Schedule, up to a month! **(coming soon)**
+- Extended Classroom Schedule, from the first session to last session! **(coming soon)**
 - Extended Attendance Status, view previous month and further! **(coming soon)**
 - Raw Profile Info.  **(coming soon)**
 - Totally asynchronous and non-blocking code, up to 4X faster than the mobile application. 
