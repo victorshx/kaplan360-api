@@ -1,3 +1,5 @@
+'use strict'
+
 const {
     refresh
 } = require('../api/session')

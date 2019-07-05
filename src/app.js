@@ -1,11 +1,16 @@
+'use strict'
+
 // Dependencies
 const express = require('express')
 const helmet = require('helmet')
+const pretty = require('express-prettify')
 
 // Express.js
 const app = express()
 app.use(helmet())
-app.set('json spaces', 2)
+app.use(pretty({
+    query: 'pretty'
+}))
 const port = process.env.PORT || 8888
 
 // Global middleware
@@ -27,14 +32,14 @@ app.use(sessionRouter)
 app.use(studentRouter)
 
 app.get('/', (req, res) => {
-    format = (seconds) => {
-        pad = (s) => {
+    const format = (seconds) => {
+        const pad = (s) => {
             return (s < 10 ? '0' : '') + s
         }
         const hours = Math.floor(seconds / (60 * 60))
         const minutes = Math.floor(seconds % (60 * 60) / 60)
 
-        return pad(hours) + ':' + pad(minutes) + ':' + Math.trunc(pad(seconds));
+        return pad(hours) + 'h:' + pad(minutes) + 'm:' + Math.trunc(pad(seconds)) + 's'
     }
 
     res.json({
