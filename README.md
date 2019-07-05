@@ -11,7 +11,6 @@ kaplan360-api offers a few key features:
 - Totally asynchronous and non-blocking code, optimised for speed and performance.
  
 ## Installation
- 
 1. Create a folder to hold your installation: `mkdir kaplan360-api`
 2. FTP/Copy the contents of the zip to your newly created folder
 3. Enter folder: `cd kaplan360-api`
@@ -28,6 +27,12 @@ Keeping kaplan360-api running after closing the terminal can be done in a few wa
 5. To start/stop: `pm2 start expressCart` / `pm2 stop expressCart`
 
 > Note: Node.js version 7.x or greater is needed.
+
+
+## Tests
+```sh
+npm test
+```
 
 ## API Documentation
  
