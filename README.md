@@ -21,6 +21,7 @@ TODO: **ADD INFO**
 ## History
  
 Version 0.1 (Initial Commit) - Added session authentication and token refresh.
+
 Version 0.2 - Refactored session routes, deprecated session refresh route, token will be refreshed automatically instead. Added student route for profile info with sub-resources support for university partner, and extended classroom schedule.
  
 ## Credits
