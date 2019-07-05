@@ -1,11 +1,12 @@
 # kaplan360-api
-kaplan360-api is an unofficial REST API for the Kaplan360 mobile application, I painstainly reversed the mobile application and looked through dozens of OpenAM/OpenIDM knowledgebase for 1-2 weeks. It is built using Node.js, Express.js, and uses ES6 syntax and Async-Await/Promise for code clarity and performance.
+kaplan360-api is an unofficial REST API for the Kaplan360 mobile application, I painstainly reverse-engineered the mobile application, and looked through dozens of OpenAM/OpenIDM knowledgebase for 1-2 weeks to chain the private API requests. It is built using Node.js, Express.js, and uses ES6 syntax and Async-Await/Promise for code clarity and performance.
 
-kaplan360-api offers a few key features:  
-- Straight-forward Basic authentication, no handling of complex multiple-chaining OAuth2 and OpenAM/OpenIDM REST API. 
-- Extended Classroom Schedule data, up to a month! **(coming soon)**
+kaplan360-api offers a few key features:
+- Intuitive API, we handle the complex multi-chaining OAuth2 and OpenAM/OpenIDM REST API for you. Built-in token refresh and error handling for OAuth2 Credentials and JWT expiry, no more finding error in a haystack.
+- Extended Classroom Schedule, from the first session to last session! **(coming soon)**
 - Extended Attendance Status, view previous month and further! **(coming soon)**
-- Totally asynchronous and non-blocking code, it's up to 4X faster than the mobile application. 
+- Raw Profile Info.  **(coming soon)**
+- Totally asynchronous and non-blocking code, optimised for speed and performance. 
  
 ## Installation
  
@@ -17,7 +18,7 @@ TODO: **ADD INFO**
  
 ## History
  
-Version 0.1 (Initial Commit) - Added session authencation and token refresh.
+Version 0.1 (Initial Commit) - Added session authentication and token refresh.
  
 ## Credits
  
@@ -27,7 +28,7 @@ VEDDEV (@veddev0x)
  
 The MIT License (MIT)
 
-Copyright (c) 2015 VEDDEV
+Copyright (c) 2019 VEDDEV
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
