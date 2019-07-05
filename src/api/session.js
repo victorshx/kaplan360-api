@@ -12,7 +12,7 @@ const authenticate = ({
 
             // OAuth2 Credentials (AM/OpenAM)
             // https://backstage.forgerock.com/knowledge/kb/article/a45882528
-            const access_token = await rq.post({
+            const oauth2 = await rq.post({
                 url: 'https://login.kaplan.com.sg/auth/oauth2/access_token',
                 form: {
                     client_id: 'kaplan360',
@@ -21,45 +21,22 @@ const authenticate = ({
                     username: user,
                     password: pass
                 },
+                forever: true,
                 gzip: true,
                 json: true,
                 simple: false
             })
 
-            if (!access_token.id_token) {
-                if (access_token.error === 'invalid_grant') {
+            if (!oauth2.id_token) {
+                if (oauth2.error === 'invalid_grant') {
                     return reject(new Error('Email or password is invalid, please retry.'))
-                } else if (access_token.error === 'invalid_client') {
+                } else if (oauth2.error === 'invalid_client') {
                     return reject(new Error('OAuth2 Client Credentials are invalid.'))
                 }
             }
 
-            // User endpoint (AM/OpenAM)
-            // https://backstage.forgerock.com/knowledge/kb/book/b93241706
-            const session_token = await rq.post({
-                url: 'https://login.kaplan.com.sg/auth/json/authenticate?authIndexType=module&authIndexValue=mobileApp',
-                headers: {
-                    'Oidc_id_token': access_token.id_token
-                },
-                gzip: true,
-                json: true,
-                simple: true
-            })
-
-            const _id = await rq.get({
-                url: 'https://profile-admin.kaplan.com.sg/openidm/info/login',
-                headers: {
-                    Iplanetdirectorypro: session_token.tokenId
-                },
-                gzip: true,
-                json: true,
-                simple: true
-            })
-
             resolve({
-                _id: _id.authorizationId.id,
-                access_token: access_token.id_token,
-                session_token: session_token.tokenId,
+                jwt: oauth2.id_token
             })
         } catch (e) {
             reject(Error(e.message))
@@ -67,9 +44,7 @@ const authenticate = ({
     })
 }
 
-const refresh = ({
-    jwt
-}) => {
+const refresh = (jwt) => {
     return new Promise(async (resolve, reject) => {
         try {
             // User endpoint (AM/OpenAM)
@@ -77,18 +52,19 @@ const refresh = ({
             const session_token = await rq.post({
                 url: 'https://login.kaplan.com.sg/auth/json/authenticate?authIndexType=module&authIndexValue=mobileApp',
                 headers: {
-                    'Oidc_id_token': jwt
+                    Oidc_id_token: jwt
                 },
+                forever: true,
                 gzip: true,
                 json: true,
                 simple: false
             })
 
-            if (session_token.tokenId) {
-                resolve(session_token.tokenId)
-            } else {
-                throw new Error('Authorization Required.')
+            if (!session_token.tokenId) {
+                return reject(new Error('Authorization Required.'))
             }
+
+            resolve(session_token.tokenId)
         } catch (e) {
             reject(Error(e.message))
         }
