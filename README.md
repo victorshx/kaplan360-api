@@ -5,8 +5,8 @@ kaplan360-api offers a few key features:
 - Intuitive API, we handle the complex multi-chaining OAuth2 and OpenAM/OpenIDM REST API for you. Built-in token refresh and error handling for OAuth2 Credentials and JWT expiry, no more finding error in a haystack.
 - Extended Classroom Schedule, from the first session to last session!
 - Extended Attendance Status, view previous month and further! **(coming soon)**
-- Get current university partner & level(Undergraduate, etc)
-- Raw Profile Info.
+- Robust Notifications API for viewing, search filtering, page and limit pagination, and sorting unread/archived.
+- Pleasant RU(Read, Update) sub-resources routes for updating profile, changing password, creating a leave application, requesting a document, and many more! **(coming soon)**
 - Keep-alive and gzip everywhere!
 - Totally asynchronous and non-blocking code, optimised for speed and performance.
  
