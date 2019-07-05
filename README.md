@@ -12,9 +12,24 @@ kaplan360-api offers a few key features:
  
 ## Installation
  
-TODO: **ADD INFO**
+1. Create a folder to hold your installation: `mkdir kaplan360-api`
+2. FTP/Copy the contents of the zip to your newly created folder
+3. Enter folder: `cd kaplan360-api`
+4. Install dependencies: `npm install`
+5. Start application: `npm start --production`
+6. Visit [http://127.0.0.1:8888](http://127.0.0.1:8888) in your browser
 
-## Usage
+Keeping kaplan360-api running after closing the terminal can be done in a few ways but we recommend using the `PM2` package. To set this up:
+
+1. Install PM2: `npm install pm2 -g`
+2. Add expressCart to PM2: `NODE_ENV=production pm2 start app.js --name "expressCart"`
+3. Check PM2 has our app: `pm2 list`
+4. Save the PM2 config: `pm2 save`
+5. To start/stop: `pm2 start expressCart` / `pm2 stop expressCart`
+
+> Note: Node.js version 7.x or greater is needed.
+
+## API Documentation
  
 TODO: **ADD INFO**
  
@@ -25,11 +40,10 @@ Version 0.1 (Initial Commit) - Added session authentication and token refresh.
 Version 0.2 - Refactored session routes, deprecated session refresh route, token will be refreshed automatically instead. Added student route for profile info with sub-resources support for university partner, and extended classroom schedule.
  
 ## Credits
- 
-VEDDEV (@veddev0x)
+ Created and maintained by VEDDEV ([@veddev0x](https://github.com/veddev0x)).
  
 ## License
- 
+
 The MIT License (MIT)
 
 Copyright (c) 2019 VEDDEV
