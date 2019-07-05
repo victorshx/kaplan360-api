@@ -56,5 +56,5 @@ Created and maintained by VEDDEV ([@veddev0x](https://github.com/veddev0x)).
 
 ## License
 
-`kaplan360-api` is available under the MIT license. See the [LICENSE.md](LICENSE.md) file for more info.
+`kaplan360-api` is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
  
