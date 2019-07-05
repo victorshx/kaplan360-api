@@ -1,12 +1,12 @@
 # kaplan360-api
 kaplan360-api is an unofficial REST API for the Kaplan360 mobile application, I painstainly reverse-engineered the mobile application, and looked through dozens of OpenAM/OpenIDM knowledgebase for 1-2 weeks to chain the private API requests. It is built using Node.js, Express.js, and uses ES6 syntax and Async-Await/Promise for code clarity and performance.
 
-kaplan360-api offers a few key features:  
-- Straight-forward Basic authentication, no handling of complex multiple-chaining OAuth2 and OpenAM/OpenIDM REST API. 
+kaplan360-api offers a few key features:
+- Intuitive API, no handling of complex multi-chaining OAuth2 and OpenAM/OpenIDM REST API. 
 - Extended Classroom Schedule, from the first session to last session! **(coming soon)**
 - Extended Attendance Status, view previous month and further! **(coming soon)**
 - Raw Profile Info.  **(coming soon)**
-- Totally asynchronous and non-blocking code, up to 4X faster than the mobile application. 
+- Totally asynchronous and non-blocking code, optimised for speed and performance. 
  
 ## Installation
  
