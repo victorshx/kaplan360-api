@@ -22,16 +22,16 @@ kaplan360-api offers a few key features:
 - macOS 10.9+ / Linux
 - [Node.js](https://nodejs.org/) `>=8` (6.x and 7.x may work but is no longer tested, please upgrade)
 
-```bash
+
+
 1. Create a folder to hold your installation: `mkdir kaplan360-api`
 2. FTP/Copy the contents of the zip to your newly created folder
 3. Enter folder: `cd kaplan360-api`
 4. Install dependencies: `npm install`
 5. Start application: `npm start --production`
 6. Visit [http://127.0.0.1:8888](http://127.0.0.1:8888) in your browser
-```
 
-```bash
+
 Keeping kaplan360-api running after closing the terminal can be done in a few ways but we recommend using the `PM2` package. To set this up:
 
 1. Install PM2: `npm install pm2 -g`
@@ -39,7 +39,7 @@ Keeping kaplan360-api running after closing the terminal can be done in a few wa
 3. Check PM2 has our app: `pm2 list`
 4. Save the PM2 config: `pm2 save`
 5. To start/stop: `pm2 start expressCart` / `pm2 stop expressCart`
-```
+
 > Note: Node.js version 7.x or greater is needed.
 
 
