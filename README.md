@@ -6,7 +6,7 @@ kaplan360-api offers a few key features:
 - Extended Classroom Schedule, up to a month! **(coming soon)**
 - Extended Attendance Status, view previous month and further! **(coming soon)**
 - Raw Profile Info.  **(coming soon)**
-- Totally asynchronous and non-blocking code, it's up to 4X faster than the mobile application. 
+- Totally asynchronous and non-blocking code, up to 4X faster than the mobile application. 
  
 ## Installation
  
