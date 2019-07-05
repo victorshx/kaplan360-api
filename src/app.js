@@ -26,6 +26,24 @@ const studentRouter = require('./routers/student')
 app.use(sessionRouter)
 app.use(studentRouter)
 
+app.get('/', (req, res) => {
+    format = (secs) => {
+        pad = (s) => {
+            return (s < 10 ? '0' : '') + s;
+        }
+        const hours = Math.floor(secs / (60 * 60));
+        const minutes = Math.floor(secs % (60 * 60) / 60);
+        const seconds = Math.floor(secs % 60);
+
+        return pad(hours) + ':' + pad(minutes) + ':' + Math.trunc(pad(secs));
+    }
+
+    res.json({
+        status: 'online',
+        uptime: format(process.uptime())
+    })
+})
+
 app.all('*', (req, res) => {
     res.send('Go away.')
 })
