@@ -35,10 +35,10 @@ kaplan360-api offers a few key features:
 Keeping kaplan360-api running after closing the terminal can be done in a few ways but we recommend using the `PM2` package. To set this up:
 
 1. Install PM2: `npm install pm2 -g`
-2. Add expressCart to PM2: `NODE_ENV=production pm2 start app.js --name "expressCart"`
+2. Add expressCart to PM2: `NODE_ENV=production pm2 start app.js --name "kaplan360-api"`
 3. Check PM2 has our app: `pm2 list`
 4. Save the PM2 config: `pm2 save`
-5. To start/stop: `pm2 start expressCart` / `pm2 stop expressCart`
+5. To start/stop: `pm2 start kaplan360-api` / `pm2 stop kaplan360-api`
 
 > Note: Node.js version 7.x or greater is needed.
 
