@@ -50,7 +50,7 @@ npm test
 
 ## API Documentation
  
-TODO: **ADD INFO**
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/7506917/SVSBxDd6?version=latest)
  
 ## History
  
