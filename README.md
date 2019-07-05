@@ -1,8 +1,8 @@
 # kaplan360-api
 
 [![Build Status](https://travis-ci.com/veddev0x/kaplan360-api.svg?branch=master)](https://travis-ci.com/veddev0x/kaplan360-api)
-[![Dependencies](https://david-dm.org/veddev0x/kaplan360-api.svg)](https://travis-ci.com/veddev0x/kaplan360-api)
-[![License](https://img.shields.io/github/license/veddev0x/kaplan360-api.svg)](LICENSE.md)
+[![Dependencies](https://david-dm.org/veddev0x/kaplan360-api.svg)](https://david-dm.org/veddev0x/kaplan360-api)
+[![License](https://img.shields.io/github/license/veddev0x/kaplan360-api.svg)](LICENSE)
 
 
 kaplan360-api is an unofficial REST API for the Kaplan360 mobile application, I painstainly reverse-engineered the mobile application, and looked through dozens of OpenAM/OpenIDM knowledgebase for 1-2 weeks to chain the private API requests. It is built using Node.js, Express.js, and uses ES6 syntax and Async-Await/Promise for code clarity and performance.
