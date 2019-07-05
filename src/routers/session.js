@@ -2,8 +2,7 @@ const express = require('express')
 const router = new express.Router()
 
 const {
-    authenticate,
-    refresh
+    authenticate
 } = require('../api/session')
 
 router.post('/api/session', async (req, res) => {

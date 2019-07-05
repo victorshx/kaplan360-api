@@ -6,7 +6,6 @@ const session = require('../middleware/session')
 const {
     profile,
     universityPartner,
-    attendance,
     classroom
 } = require('../api/student')
 

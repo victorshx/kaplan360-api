@@ -1,5 +1,4 @@
 const {
-    authenticate,
     refresh
 } = require('../api/session')
 
