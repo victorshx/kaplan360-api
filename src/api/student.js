@@ -46,7 +46,7 @@ const universityPartner = async (Token) => {
                 simple: true
             })
 
-            if (universityPartner.data.length == 0) {
+            if (universityPartner.data.length === 0) {
                 return resolve('You are not enrolled in any university partner.')
             }
 
@@ -56,7 +56,7 @@ const universityPartner = async (Token) => {
             // Cache array length for performance
             const arrayLength = universityPartner.data.length
 
-            // For loop and push() is the fastest for looping array and adding array elements 
+            // For loop and push() is the fastest for looping array and adding array elements
             for (i = 0; i < arrayLength; i++) {
                 universityPartnerArray.push({
                     partner: universityPartner.data[i].partnerDesc,

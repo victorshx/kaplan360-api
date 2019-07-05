@@ -1,4 +1,4 @@
-//Dependencies
+// Dependencies
 const express = require('express')
 const helmet = require('helmet')
 
@@ -27,15 +27,14 @@ app.use(sessionRouter)
 app.use(studentRouter)
 
 app.get('/', (req, res) => {
-    format = (secs) => {
+    format = (seconds) => {
         pad = (s) => {
-            return (s < 10 ? '0' : '') + s;
+            return (s < 10 ? '0' : '') + s
         }
-        const hours = Math.floor(secs / (60 * 60));
-        const minutes = Math.floor(secs % (60 * 60) / 60);
-        const seconds = Math.floor(secs % 60);
+        const hours = Math.floor(seconds / (60 * 60))
+        const minutes = Math.floor(seconds % (60 * 60) / 60)
 
-        return pad(hours) + ':' + pad(minutes) + ':' + Math.trunc(pad(secs));
+        return pad(hours) + ':' + pad(minutes) + ':' + Math.trunc(pad(seconds));
     }
 
     res.json({
