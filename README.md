@@ -51,6 +51,20 @@ npm test
 ## API Documentation
  
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/7506917/SVSBxDd6?version=latest)
+
+**Example Response**
+```bash
+curl -X POST -u CT0586391:password http://localhost:8888/api/session
+```
+
+```json
+{
+    "success": true,
+    "payload": {
+        "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOIsImtpZCI6InpoQm9mYlp3K2prWlpqWHMyOGZHZnp4WmdNOD0ifQ.eyJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImF6cCI6ImthcGxhbjM2MCIsInN1YiI6IkNUMDI4NjImF0X2hhc2giOiJWNUJ6UmJOdng4NHdlbElVR0JHZnZ3IiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5rYXBsYW4uY29tLnNnOjQ0My9hdXRoL29hdXRoMiIsIm9yZy5mb3JnZXJvY2sub3BlbmlkY29ubmVjdC5vcHMiOiJlZGJiNGIyNi00YWFhLTRiYWYtYmViNy0wMmEyMGFhOTgxMDEiLCJpYXQiOjE1NjIzNzEyMDQsImF1dGhfdGltZSI6MTU2MjM3MTIwNCwiZXhwIjoxNTYyNzMxMjA0LCJ0b2tlblR5cGUiOiJKV1RUb2tlbiIsImF1ZGl0VHJhY2tpbmdJZCI6Ijc1Y2E2YTA5LWY5ZDEtNDg3My1iODViLTE0NWYyZmUyNmI2OS0zNDEyNDkwMCIsInJlYWxtIjoiLyIsImF1ZCI6ImthcGxhbjM2MCJ9.bSJ-kcaM-lEgAVRu_MgGHgB_SXmPTZlQJ0uQ7FtMRNBx6dI_-6dsTT10Xi6URP6eXXyn4W6DANGc7F8R6me40csfePcw3IsemK6zUPB_pA9CfboY2tz0bVdVk02rm-XqNwX0besfbGvaienTKAYqksGzdWnnA8vsP4UA8IbGoDTX7hyf5vDMC1nWuPIcEHt1RVa0yojs8B13T4cqHIgnJ1qGuQnPF9HQ1TaZY01425D7WH9NnrIpjYTpj4cP4OI_5azmD3-o-WkJbc_YVxA0VZ_ivLcGqZLtN1e4RdNekqezlTxj-pU_eGjuQxqFw-xSMp"
+    }
+}
+```
  
 ## History
  
