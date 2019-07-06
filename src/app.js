@@ -15,9 +15,6 @@ const port = process.env.PORT || 8888
 
 // Global middleware
 app.use((req, res, next) => {
-    // Keep-alive
-    res.setHeader('Connection', 'keep-alive')
-
     // No-cache
     res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
     res.header('Expires', '-1');

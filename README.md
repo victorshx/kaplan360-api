@@ -66,12 +66,6 @@ curl -X POST -u CT0586391:password http://localhost:8888/api/session
 }
 ```
  
-## History
- 
-Version 0.1 (Initial Commit) - Added session authentication and token refresh.
-
-Version 0.2 - Refactored session routes, deprecated session refresh route, token will be refreshed automatically instead. Added student route for profile info with sub-resources support for university partner, and extended classroom schedule.
- 
 ## Credits
 
 Created and maintained by VEDDEV ([@veddev0x](https://github.com/veddev0x)).

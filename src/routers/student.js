@@ -9,7 +9,7 @@ const {
     profile,
     universityPartner,
     classroom
-} = require('../api/student')
+} = require('../utils/student')
 
 router.get('/api/student/', session, async (req, res) => {
     try {

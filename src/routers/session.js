@@ -5,7 +5,7 @@ const router = new express.Router()
 
 const {
     authenticate
-} = require('../api/session')
+} = require('../utils/session')
 
 router.post('/api/session', async (req, res) => {
     try {

@@ -31,9 +31,9 @@ const authenticate = ({
 
             if (!oauth2.id_token) {
                 if (oauth2.error === 'invalid_grant') {
-                    return reject(new Error('Email or password is invalid, please retry.'))
+                    return reject(new Error('Email or password is invalid.'))
                 } else if (oauth2.error === 'invalid_client') {
-                    return reject(new Error('OAuth2 Client Credentials are invalid.'))
+                    return reject(new Error('OAuth2Exception'))
                 }
             }
 
