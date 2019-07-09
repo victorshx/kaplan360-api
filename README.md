@@ -13,7 +13,6 @@ kaplan360-api offers a few key features:
 - Extended Attendance Status, view previous month and further! **(coming soon)**
 - Robust Notifications API for viewing, search filtering, page and limit pagination, and sorting unread/archived. **(coming soon)**
 - Pleasant RU(Read, Update) sub-resources routes for updating profile, changing password, creating a leave application, requesting a document, and many more! **(coming soon)**
-- Keep-alive and gzip everywhere!
 - Totally asynchronous and non-blocking code, optimised for speed and performance.
  
 ## Installation
