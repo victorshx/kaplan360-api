@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/github/license/veddev0x/kaplan360-api.svg)](LICENSE)
 
 
-kaplan360-api is an unofficial REST API for the Kaplan360 mobile application, I painstainly reverse-engineered the mobile application, and looked through dozens of OpenAM/OpenIDM knowledgebase for 1-2 weeks to chain the private API requests. It is built using Node.js, Express.js, and uses ES6 syntax and Async-Await/Promise for code clarity and performance.
+kaplan360-api is an unofficial REST API for the Kaplan360 mobile application. It is built using Node.js, Express.js, and uses ES6 syntax and Async-Await/Promise for code clarity and performance.
 
 kaplan360-api offers a few key features:
 - Intuitive API, we handle the complex multi-chaining OAuth2 and OpenAM/OpenIDM REST API for you. Built-in token refresh and error handling for OAuth2 Credentials and JWT expiry, no more finding error in a haystack.
