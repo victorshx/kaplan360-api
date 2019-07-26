@@ -53,7 +53,7 @@ npm test
 
 **Example Response**
 ```bash
-curl -X POST -u CT0586391:password http://localhost:8888/api/session
+curl -X POST -u CT0586391:password https://kaplan365.tk/api/session
 ```
 
 ```json
