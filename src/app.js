@@ -28,7 +28,7 @@ const studentRouter = require('./routers/student')
 app.use(sessionRouter)
 app.use(studentRouter)
 
-app.get('*', (req, res) => {
+app.get('/api', (req, res) => {
     const format = (seconds) => {
         const pad = (s) => {
             return (s < 10 ? '0' : '') + s
@@ -42,6 +42,28 @@ app.get('*', (req, res) => {
     res.json({
         status: 'online',
         uptime: format(process.uptime())
+    })
+}).get('/', (req, res) => {
+    const format = (seconds) => {
+        const pad = (s) => {
+            return (s < 10 ? '0' : '') + s
+        }
+        const hours = Math.floor(seconds / (60 * 60))
+        const minutes = Math.floor(seconds % (60 * 60) / 60)
+
+        return pad(hours) + 'h:' + pad(minutes) + 'm:' + Math.trunc(pad(seconds)) + 's'
+    }
+
+    res.json({
+        status: 'online',
+        uptime: format(process.uptime())
+    })
+})
+
+app.get('*', (req, res) => {
+    res.status(404).json({
+        error: res.statusCode,
+        message: '404 Not Found'
     })
 })
 
