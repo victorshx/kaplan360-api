@@ -28,7 +28,7 @@ const studentRouter = require('./routers/student')
 app.use(sessionRouter)
 app.use(studentRouter)
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
     const format = (seconds) => {
         const pad = (s) => {
             return (s < 10 ? '0' : '') + s
@@ -45,9 +45,6 @@ app.get('/', (req, res) => {
     })
 })
 
-app.all('*', (req, res) => {
-    res.send('Go away.')
-})
 app.listen(port, () => {
     console.log('Server is listening at port ' + port)
 })
