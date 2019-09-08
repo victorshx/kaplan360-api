@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-const express = require('express')
-const router = new express.Router()
+const express = require('express');
+const router = new express.Router();
 
 const {
     authenticate
-} = require('../utils/session')
+} = require('../utils/session');
 
 router.post('/api/session', async (req, res) => {
     try {
@@ -13,12 +13,12 @@ router.post('/api/session', async (req, res) => {
             throw new Error('Please provide an Authorization Basic header..')
         }
 
-        const authorizationDecoded = Buffer.from(req.headers.authorization.replace('Basic ', ''), 'base64').toString().split(':')
+        const authorizationDecoded = Buffer.from(req.headers.authorization.replace('Basic ', ''), 'base64').toString().split(':');
 
         const tokens = await authenticate({
             user: authorizationDecoded[0],
             pass: authorizationDecoded[1]
-        })
+        });
 
         res.json({
             success: true,
@@ -32,6 +32,6 @@ router.post('/api/session', async (req, res) => {
             }
         })
     }
-})
+});
 
-module.exports = router
+module.exports = router;

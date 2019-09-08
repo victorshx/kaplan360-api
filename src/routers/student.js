@@ -1,19 +1,19 @@
-'use strict'
+'use strict';
 
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
 
-const session = require('../middleware/session')
+const session = require('../middleware/session');
 
 const {
     profile,
     universityPartner,
     classroom
-} = require('../utils/student')
+} = require('../utils/student');
 
 router.get('/api/student/', session, async (req, res) => {
     try {
-        const student = await profile(req.token)
+        const student = await profile(req.token);
 
         res.json({
             success: true,
@@ -29,7 +29,7 @@ router.get('/api/student/', session, async (req, res) => {
     }
 }).get('/api/student/classroom', session, async (req, res) => {
     try {
-        const scheduleList = await classroom(req.token)
+        const scheduleList = await classroom(req.token);
 
         res.json({
             success: true,
@@ -45,7 +45,7 @@ router.get('/api/student/', session, async (req, res) => {
     }
 }).get('/api/student/partner', session, async (req, res) => {
     try {
-        const partnerInfo = await universityPartner(req.token)
+        const partnerInfo = await universityPartner(req.token);
 
         res.json({
             success: true,
@@ -59,6 +59,6 @@ router.get('/api/student/', session, async (req, res) => {
             }
         })
     }
-})
+});
 
-module.exports = router
+module.exports = router;

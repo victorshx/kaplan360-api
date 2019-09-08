@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
 const {
     refresh
-} = require('../utils/session')
+} = require('../utils/session');
 
 const session = async (req, res, next) => {
     try {
@@ -14,8 +14,8 @@ const session = async (req, res, next) => {
             throw new Error('TokenExpiredException')
         }
 
-        const session_token = await refresh(req.headers.authorization.replace('Bearer ', ''))
-        req.token = session_token
+        const session_token = await refresh(req.headers.authorization.replace('Bearer ', ''));
+        req.token = session_token;
 
         return next()
     } catch (e) {
@@ -24,6 +24,6 @@ const session = async (req, res, next) => {
             message: e.message
         })
     }
-}
+};
 
-module.exports = session
+module.exports = session;

@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-const rq = require('request-promise-native')
+const rq = require('request-promise-native');
 
 const authenticate = ({
-    user,
-    pass
-}) => {
+                          user,
+                          pass
+                      }) => {
     return new Promise(async (resolve, reject) => {
         try {
             // Documentation
@@ -27,7 +27,7 @@ const authenticate = ({
                 gzip: true,
                 json: true,
                 simple: false
-            })
+            });
 
             if (!oauth2.id_token) {
                 if (oauth2.error === 'invalid_grant') {
@@ -44,7 +44,7 @@ const authenticate = ({
             reject(Error(e.message))
         }
     })
-}
+};
 
 const refresh = (jwt) => {
     return new Promise(async (resolve, reject) => {
@@ -60,7 +60,7 @@ const refresh = (jwt) => {
                 gzip: true,
                 json: true,
                 simple: false
-            })
+            });
 
             if (!session_token.tokenId) {
                 return reject(new Error('Authorization Required.'))
@@ -71,8 +71,8 @@ const refresh = (jwt) => {
             reject(Error(e.message))
         }
     })
-}
+};
 module.exports = {
     authenticate,
     refresh
-}
+};
