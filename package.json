@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "mocha src/ --exit && eslint src/"
+    "test": "mocha src/ --exit"
   },
   "keywords": [],
   "author": {
