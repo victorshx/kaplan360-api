@@ -88,5 +88,3 @@ typings/
 .dynamodb/
 
 *.yaml
-
-.idea/
