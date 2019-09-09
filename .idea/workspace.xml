@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="384e9626-0690-4b5f-b018-331f6805c9f4" name="Default Changelist" comment="" />
+    <list default="true" id="384e9626-0690-4b5f-b018-331f6805c9f4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,16 +39,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.dev">
-    <configuration name="dev" type="NodeJSConfigurationType" node-parameters="C:\Users\Victor\AppData\Roaming\npm\node_modules\nodemon\bin\nodemon.js" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/src">
+  <component name="RunManager" selected="Node.js.test">
+    <configuration name="dev" type="NodeJSConfigurationType" application-parameters="run dev" path-to-js-file="C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="start" type="NodeJSConfigurationType" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/src">
+    <configuration name="start" type="NodeJSConfigurationType" application-parameters="run start" path-to-js-file="C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="NodeJSConfigurationType" application-parameters="run test" path-to-js-file="C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Node.js.start" />
       <item itemvalue="Node.js.dev" />
+      <item itemvalue="Node.js.test" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -66,7 +72,8 @@
       <workItem from="1567957883576" duration="372000" />
       <workItem from="1567961047821" duration="1282000" />
       <workItem from="1567989210720" duration="584000" />
-      <workItem from="1567991796776" duration="628000" />
+      <workItem from="1567991796776" duration="710000" />
+      <workItem from="1567992525005" duration="365000" />
     </task>
     <servers />
   </component>
