@@ -28,6 +28,7 @@ const studentRouter = require('./routers/student');
 app.use(sessionRouter);
 app.use(studentRouter);
 
+// Uptime
 app.get('/api', (req, res) => {
     const format = (seconds) => {
         const pad = (s) => {

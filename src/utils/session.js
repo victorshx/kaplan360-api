@@ -2,10 +2,7 @@
 
 const rq = require('request-promise-native');
 
-const authenticate = ({
-                          user,
-                          pass
-                      }) => {
+const authenticate = ({user, pass}) => {
     return new Promise(async (resolve, reject) => {
         try {
             // Documentation
@@ -72,6 +69,7 @@ const refresh = (jwt) => {
         }
     })
 };
+
 module.exports = {
     authenticate,
     refresh

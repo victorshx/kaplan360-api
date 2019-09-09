@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="384e9626-0690-4b5f-b018-331f6805c9f4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/session.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +25,9 @@
   <component name="ProjectId" id="1QYlx6XFQhBTAJOHLZ2bzuYVIto" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hilton-honours" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.16.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../williamks.com" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
@@ -39,7 +43,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.test">
+  <component name="RunManager" selected="Node.js.start">
     <configuration name="dev" type="NodeJSConfigurationType" application-parameters="run dev" path-to-js-file="C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -73,7 +77,8 @@
       <workItem from="1567961047821" duration="1282000" />
       <workItem from="1567989210720" duration="584000" />
       <workItem from="1567991796776" duration="710000" />
-      <workItem from="1567992525005" duration="365000" />
+      <workItem from="1567992525005" duration="903000" />
+      <workItem from="1567993728575" duration="463000" />
     </task>
     <servers />
   </component>
