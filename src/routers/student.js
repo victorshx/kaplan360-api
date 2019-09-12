@@ -5,11 +5,7 @@ const router = express.Router();
 
 const session = require('../middleware/session');
 
-const {
-    profile,
-    universityPartner,
-    classroom
-} = require('../utils/student');
+const {profile, universityPartner, classroom} = require('../utils/student');
 
 router.get('/api/student/', session, async (req, res) => {
     try {

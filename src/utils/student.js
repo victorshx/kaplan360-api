@@ -52,7 +52,6 @@ const universityPartner = async (Token) => {
                 return resolve('You are not enrolled in any university partner.')
             }
 
-
             let universityPartnerArray = [];
 
             // Cache array length for performance
@@ -65,7 +64,6 @@ const universityPartner = async (Token) => {
                     level: universityPartner.data[i].careerDesc
                 })
             }
-
 
             resolve(universityPartnerArray)
         } catch (e) {

@@ -8,7 +8,6 @@ const authenticate = ({user, pass}) => {
             // Documentation
             // https://backstage.forgerock.com/docs/openam/13/dev-guide/#about-openam-rest-api
 
-
             // OAuth2 Credentials (AM/OpenAM)
             // https://backstage.forgerock.com/knowledge/kb/article/a45882528
             const oauth2 = await rq.post({

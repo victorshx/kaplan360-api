@@ -3,9 +3,7 @@
 const express = require('express');
 const router = new express.Router();
 
-const {
-    authenticate
-} = require('../utils/session');
+const {authenticate} = require('../utils/session');
 
 router.post('/api/session', async (req, res) => {
     try {

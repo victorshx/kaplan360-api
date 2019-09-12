@@ -4,32 +4,15 @@
     <list default="true" id="384e9626-0690-4b5f-b018-331f6805c9f4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/session.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers/student.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/student.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/session.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/student.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/student.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="G:\Projects\kaplan360-api\.idea" />
-      </set>
-    </option>
-  </component>
-  <component name="ProjectId" id="1QYlx6XFQhBTAJOHLZ2bzuYVIto" />
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.16.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../williamks.com" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -43,59 +26,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.start">
-    <configuration name="dev" type="NodeJSConfigurationType" application-parameters="run dev" path-to-js-file="C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration name="start" type="NodeJSConfigurationType" application-parameters="run start" path-to-js-file="C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="NodeJSConfigurationType" application-parameters="run test" path-to-js-file="C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Node.js.start" />
-      <item itemvalue="Node.js.dev" />
-      <item itemvalue="Node.js.test" />
-    </list>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="384e9626-0690-4b5f-b018-331f6805c9f4" name="Default Changelist" comment="" />
-      <created>1567955653136</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1567955653136</updated>
-      <workItem from="1567955655064" duration="141000" />
-      <workItem from="1567955805773" duration="449000" />
-      <workItem from="1567956270400" duration="7000" />
-      <workItem from="1567957164689" duration="226000" />
-      <workItem from="1567957883576" duration="372000" />
-      <workItem from="1567961047821" duration="1282000" />
-      <workItem from="1567989210720" duration="584000" />
-      <workItem from="1567991796776" duration="710000" />
-      <workItem from="1567992525005" duration="903000" />
-      <workItem from="1567993728575" duration="463000" />
-    </task>
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app.js</url>
+          <line>30</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
