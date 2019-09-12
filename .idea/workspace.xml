@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="384e9626-0690-4b5f-b018-331f6805c9f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/session.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/student.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/student.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/session.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/student.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/student.js" afterDir="false" />
-    </list>
+    <list default="true" id="384e9626-0690-4b5f-b018-331f6805c9f4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
