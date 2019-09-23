@@ -52,20 +52,9 @@ const universityPartner = async (Token) => {
                 return resolve('You are not enrolled in any university partner.')
             }
 
-            let universityPartnerArray = [];
+            const universityPartnerObject = {...universityPartner.data[0]};
 
-            // Cache array length for performance
-            const arrayLength = universityPartner.data.length;
-
-            // For loop and push() is the fastest for looping array and adding array elements
-            for (let i = 0; i < arrayLength; i++) {
-                universityPartnerArray.push({
-                    partner: universityPartner.data[i].partnerDesc,
-                    level: universityPartner.data[i].careerDesc
-                })
-            }
-
-            resolve(universityPartnerArray)
+            resolve(universityPartnerObject)
         } catch (e) {
             console.log(e);
             reject(Error('Authorization Required.'))
