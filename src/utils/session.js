@@ -2,15 +2,11 @@
 
 const rq = require('request-promise-native');
 
-const authenticate = ({
-                          user,
-                          pass
-                      }) => {
+const invokeSession = ({user, pass}) => {
     return new Promise(async (resolve, reject) => {
         try {
             // Documentation
             // https://backstage.forgerock.com/docs/openam/13/dev-guide/#about-openam-rest-api
-
 
             // OAuth2 Credentials (AM/OpenAM)
             // https://backstage.forgerock.com/knowledge/kb/article/a45882528
@@ -46,7 +42,7 @@ const authenticate = ({
     })
 };
 
-const refresh = (jwt) => {
+const getRefreshToken = (token) => {
     return new Promise(async (resolve, reject) => {
         try {
             // User endpoint (AM/OpenAM)
@@ -54,7 +50,7 @@ const refresh = (jwt) => {
             const session_token = await rq.post({
                 url: 'https://login.kaplan.com.sg/auth/json/authenticate?authIndexType=module&authIndexValue=mobileApp',
                 headers: {
-                    Oidc_id_token: jwt
+                    Oidc_id_token: token
                 },
                 forever: true,
                 gzip: true,
@@ -72,7 +68,8 @@ const refresh = (jwt) => {
         }
     })
 };
+
 module.exports = {
-    authenticate,
-    refresh
+    invokeSession,
+    getRefreshToken
 };

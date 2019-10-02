@@ -2,13 +2,13 @@
 
 const rq = require('request-promise-native');
 
-const profile = (Token) => {
+const getStudentProfile = (token) => {
     return new Promise(async (resolve, reject) => {
         try {
             const user = await rq.get({
                 url: 'https://profile-admin.kaplan.com.sg/openidm/info/login',
                 headers: {
-                    Iplanetdirectorypro: Token
+                    Iplanetdirectorypro: token
                 },
                 forever: true,
                 gzip: true,
@@ -19,7 +19,7 @@ const profile = (Token) => {
             const userProfile = await rq.get({
                 url: `https://profile-admin.kaplan.com.sg/openidm/managed/user/${user.authorizationId.id}`,
                 headers: {
-                    Iplanetdirectorypro: Token
+                    Iplanetdirectorypro: token
                 },
                 forever: true,
                 gzip: true,
@@ -34,13 +34,13 @@ const profile = (Token) => {
     })
 };
 
-const universityPartner = async (Token) => {
+const getUniversityPartner = async (token) => {
     return new Promise(async (resolve, reject) => {
         try {
             const universityPartner = await rq.get({
                 url: 'https://api-proxy-sg.au.cloudhub.io/onboarding-listCurrentPartners',
                 headers: {
-                    Token
+                    Token: token
                 },
                 forever: true,
                 gzip: true,
@@ -52,22 +52,9 @@ const universityPartner = async (Token) => {
                 return resolve('You are not enrolled in any university partner.')
             }
 
+            const universityPartnerObject = {...universityPartner.data[0]};
 
-            let universityPartnerArray = [];
-
-            // Cache array length for performance
-            const arrayLength = universityPartner.data.length;
-
-            // For loop and push() is the fastest for looping array and adding array elements
-            for (let i = 0; i < arrayLength; i++) {
-                universityPartnerArray.push({
-                    partner: universityPartner.data[i].partnerDesc,
-                    level: universityPartner.data[i].careerDesc
-                })
-            }
-
-
-            resolve(universityPartnerArray)
+            resolve(universityPartnerObject)
         } catch (e) {
             console.log(e);
             reject(Error('Authorization Required.'))
@@ -75,7 +62,7 @@ const universityPartner = async (Token) => {
     })
 };
 
-const classroom = async (Token) => {
+const getClassroomList = async (Token) => {
     return new Promise(async (resolve, reject) => {
         try {
             const classroomData = await rq.get({
@@ -89,7 +76,13 @@ const classroom = async (Token) => {
                 simple: true
             });
 
-            resolve(classroomData.data)
+            let scheduleArray = [];
+
+            for(let i = 0;i < classroomData.data.length;i++){
+                scheduleArray.push(classroomData.data[0])
+            }
+
+            resolve(scheduleArray)
         } catch (e) {
             reject(Error('Authorization Required.'))
         }
@@ -97,7 +90,7 @@ const classroom = async (Token) => {
 };
 
 module.exports = {
-    profile,
-    universityPartner,
-    classroom
+    getStudentProfile,
+    getUniversityPartner,
+    getClassroomList
 };

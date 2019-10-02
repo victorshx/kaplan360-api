@@ -5,19 +5,15 @@ const router = express.Router();
 
 const session = require('../middleware/session');
 
-const {
-    profile,
-    universityPartner,
-    classroom
-} = require('../utils/student');
+const {getStudentProfile, getUniversityPartner, getClassroomList} = require('../utils/student');
 
 router.get('/api/student/', session, async (req, res) => {
     try {
-        const student = await profile(req.token);
+        const profileData = await getStudentProfile(req.token);
 
         res.json({
             success: true,
-            payload: student
+            student: profileData
         })
     } catch (e) {
         res.status(401).json({
@@ -29,11 +25,12 @@ router.get('/api/student/', session, async (req, res) => {
     }
 }).get('/api/student/classroom', session, async (req, res) => {
     try {
-        const scheduleList = await classroom(req.token);
+        const classroomData = await getClassroomList(req.token);
 
         res.json({
             success: true,
-            payload: scheduleList
+            list: classroomData
+            
         })
     } catch (e) {
         res.status(401).json({
@@ -45,11 +42,11 @@ router.get('/api/student/', session, async (req, res) => {
     }
 }).get('/api/student/partner', session, async (req, res) => {
     try {
-        const partnerInfo = await universityPartner(req.token);
+        const partnerData = await getUniversityPartner(req.token);
 
         res.json({
             success: true,
-            payload: partnerInfo
+            partner: partnerData
         })
     } catch (e) {
         res.status(401).json({
