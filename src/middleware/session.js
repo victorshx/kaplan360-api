@@ -2,9 +2,7 @@
 
 const validator = require('validator');
 
-const {
-    refresh
-} = require('../utils/session');
+const {getRefreshToken} = require('../utils/session');
 
 const session = async (req, res, next) => {
     try {
@@ -18,7 +16,7 @@ const session = async (req, res, next) => {
             throw new Error('TokenExpiredException')
         }
 
-        req.token = await refresh(bearerToken.replace('Bearer ', ''));
+        req.token = await getRefreshToken(bearerToken.replace('Bearer ', ''));
         return next()
     } catch (e) {
         res.status(401).json({
