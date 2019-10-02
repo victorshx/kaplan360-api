@@ -13,14 +13,14 @@ router.post('/api/session', async (req, res) => {
 
         const authorizationDecoded = Buffer.from(req.headers.authorization.replace('Basic ', ''), 'base64').toString().split(':');
 
-        const tokens = await invokeSession({
+        const token = await invokeSession({
             user: authorizationDecoded[0],
             pass: authorizationDecoded[1]
         });
 
         res.json({
             success: true,
-            payload: tokens
+            token
         })
     } catch (e) {
         res.status(401).json({
