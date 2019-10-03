@@ -8,7 +8,7 @@ const {invokeSession} = require('../utils/session');
 router.post('/api/session', async (req, res) => {
     try {
         if (!req.headers.authorization || req.headers.authorization.indexOf('Basic ') === -1) {
-            throw new Error('Please provide an Authorization Basic header..')
+            throw new Error('Please provide an Authorization Basic header.')
         }
 
         const authorizationDecoded = Buffer.from(req.headers.authorization.replace('Basic ', ''), 'base64').toString().split(':');
