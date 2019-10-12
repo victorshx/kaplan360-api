@@ -30,7 +30,7 @@ router.get('/api/student/', session, async (req, res) => {
         res.json({
             success: true,
             list: classroomData
-            
+
         })
     } catch (e) {
         res.status(401).json({
