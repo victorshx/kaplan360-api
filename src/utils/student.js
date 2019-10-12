@@ -78,8 +78,8 @@ const getClassroomList = async (Token) => {
 
             let scheduleArray = [];
 
-            for(let i = 0;i < classroomData.data.length;i++){
-                scheduleArray.push(classroomData.data[0])
+            for (let i = 0; i < classroomData.data.length; i++) {
+                scheduleArray.push(classroomData.data[i])
             }
 
             resolve(scheduleArray)
