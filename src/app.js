@@ -3,24 +3,18 @@
 // Dependencies
 const express = require('express');
 const helmet = require('helmet');
+const compression = require('compression');
 const pretty = require('express-prettify');
 
 // Express.js
 const app = express();
 app.use(helmet());
+app.use(helmet.noCache());
+app.use(compression());
 app.use(pretty({
     query: 'pretty'
 }));
-const port = process.env.PORT || 8888;
-
-// Global middleware
-app.use((req, res, next) => {
-    // No-cache
-    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
-    res.header('Expires', '-1');
-    res.header('Pragma', 'no-cache');
-    next()
-});
+const PORT = process.env.PORT || 8888;
 
 // Routers
 const sessionRouter = require('./routers/session');
@@ -35,6 +29,6 @@ app.get('*', (req, res) => {
     })
 });
 
-app.listen(port, () => {
-    console.log('Server is listening at port ' + port)
+app.listen(PORT, () => {
+    console.log('Server is listening at port ' + PORT)
 });

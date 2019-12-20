@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="384e9626-0690-4b5f-b018-331f6805c9f4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,9 +17,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QkEF2pBZMRSl0Xh5zLOgkMv2nV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../williamks.com" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nxt-connect" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -24,17 +33,17 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="MTCustomThemeConfigurable" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -64,6 +73,20 @@
       <workItem from="1571230513693" duration="715000" />
       <workItem from="1572189385778" duration="20000" />
       <workItem from="1572189428922" duration="13000" />
+      <workItem from="1574758350463" duration="23000" />
+      <workItem from="1574758388771" duration="152000" />
+      <workItem from="1574758551978" duration="24000" />
+      <workItem from="1575798276977" duration="162000" />
+      <workItem from="1576151722705" duration="28000" />
+      <workItem from="1576157914929" duration="460000" />
+      <workItem from="1576158391840" duration="153000" />
+      <workItem from="1576244079684" duration="26000" />
+      <workItem from="1576244171000" duration="26000" />
+      <workItem from="1576244224671" duration="5000" />
+      <workItem from="1576244273581" duration="61000" />
+      <workItem from="1576313134035" duration="111000" />
+      <workItem from="1576480466820" duration="46000" />
+      <workItem from="1576838301395" duration="3000" />
     </task>
     <servers />
   </component>
@@ -82,5 +105,31 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="640" y="247" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1574758367088">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="247" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1574758367088" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1576313243874">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1576313243874" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1574758522277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1574758522277" />
+    <state x="715" y="364" key="cloudConfig.SelfSettingsDialog" timestamp="1574758535956">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="364" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1574758535956" />
+    <state x="667" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1574758357962">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1574758357962" />
+    <state x="616" y="242" width="672" height="677" key="run.anything.popup" timestamp="1574758560061">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="242" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1574758560061" />
   </component>
 </project>
