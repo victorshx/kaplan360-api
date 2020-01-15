@@ -54,7 +54,7 @@ npm test
 
 **Example Response**
 ```bash
-https://kaplan365.tk/api/session?username=CT1234567&password=supersecurepass
+curl -X POST -H "Content-Length: 0" https://kaplan365.tk/api/session?username=CT1234567&password=supersecurepass
 ```
 
 ```json
