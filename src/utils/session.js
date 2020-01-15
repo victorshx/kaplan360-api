@@ -2,7 +2,7 @@
 
 const rq = require('request-promise-native');
 
-const invokeSession = ({user, pass}) => {
+const getAuthorizationToken = ({user, pass}) => {
     return new Promise(async (resolve, reject) => {
         try {
             // Documentation
@@ -70,6 +70,6 @@ const getRefreshToken = (token) => {
 };
 
 module.exports = {
-    invokeSession,
+    getAuthorizationToken,
     getRefreshToken
 };
