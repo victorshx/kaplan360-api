@@ -3,19 +3,17 @@
 const express = require('express');
 const router = new express.Router();
 
-const {invokeSession} = require('../utils/session');
+const {getAuthorizationToken} = require('../utils/session');
 
 router.post('/api/session', async (req, res) => {
     try {
-        if (!req.headers.authorization || req.headers.authorization.indexOf('Basic ') === -1) {
-            throw new Error('Please provide an Authorization Basic header.')
+        if (!req.query.username || !req.query.password) {
+            throw new Error('Please provide username and password query parameters!')
         }
 
-        const authorizationDecoded = Buffer.from(req.headers.authorization.replace('Basic ', ''), 'base64').toString().split(':');
-
-        const token = await invokeSession({
-            user: authorizationDecoded[0],
-            pass: authorizationDecoded[1]
+        const token = await getAuthorizationToken({
+            user: req.query.username,
+            pass: req.query.password
         });
 
         res.json({
