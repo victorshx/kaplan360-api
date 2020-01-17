@@ -1,12 +1,14 @@
 {
-  "name": "kaplan360",
+  "name": "kaplan360-api",
   "version": "1.0.0",
   "description": "An unofficial REST API for the Kaplan360 mobile application written in Node.js",
-  "main": "src/app.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
-    "test": "mocha src/ --exit"
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev:watch": "tsc-watch --onSuccess \"npm run start\"",
+    "dev:trace": "node --trace-sync-io dist/index.js",
+    "test": "mocha dist/ --exit"
   },
   "keywords": [],
   "author": {
@@ -16,12 +18,27 @@
   },
   "license": "MIT",
   "dependencies": {
-    "compression": "^1.7.4",
-    "express": "^4.17.1",
-    "express-prettify": "^0.1.1",
-    "helmet": "^3.21.1",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.7",
-    "validator": "^11.1.0"
+    "@hapi/boom": "^7.4.11",
+    "@hapi/hapi": "^18.4.0",
+    "@hapi/inert": "^5.2.2",
+    "@hapi/joi": "^16.1.8",
+    "@hapi/vision": "^5.5.4",
+    "axios": "^0.19.0",
+    "hapi-swagger": "^11.1.0",
+    "qs": "^6.9.1",
+    "validator": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/hapi__boom": "^7.4.1",
+    "@types/hapi__hapi": "^18.2.6",
+    "@types/hapi__inert": "^5.2.0",
+    "@types/hapi__joi": "^16.0.4",
+    "@types/hapi__vision": "^5.5.1",
+    "@types/node": "^12.12.18",
+    "@types/qs": "^6.9.0",
+    "@types/validator": "^12.0.1",
+    "ts-node": "^8.5.4",
+    "tsc-watch": "^4.0.0",
+    "typescript": "^3.7.3"
   }
 }

@@ -1,76 +1,97 @@
-# kaplan360-api
+# edugateway
 
-[![Build Status](https://travis-ci.com/veddev0x/kaplan360-api.svg?branch=master)](https://travis-ci.com/veddev0x/kaplan360-api)
-[![Dependencies](https://david-dm.org/veddev0x/kaplan360-api.svg)](https://david-dm.org/veddev0x/kaplan360-api)
-[![License](https://img.shields.io/github/license/veddev0x/kaplan360-api.svg)](LICENSE)
+[![Build Status](https://travis-ci.com/veddev0x/kaplan360-api.svg?branch=v2)](https://travis-ci.com/veddev0x/kaplan360-api/tree/v2)
 
+edugateway is an unofficial REST API offering a unified access to multiple educational institution.
 
-kaplan360-api is an unofficial REST API for the Kaplan360 mobile application. It is built using Node.js, Express.js, and uses ES6 syntax and Async-Await/Promise for code clarity and performance.
+The entire project has been rewritten from scratch in Typescript and hapi web framework. However, it's still in alpha, please do not expect that all API will work. As the project starts to grow out of a single educational institution gateway, the complexity of the project will grow out of its size hence I made the decision to bump the version. The focus of this version is to encourage modular coding, enforce a clean directory structure rule, and make sure code is reusable.
 
-kaplan360-api offers a few key features:
-- Intuitive API, we handle the complex multi-chaining OAuth2 and OpenAM/OpenIDM REST API for you. Built-in token refresh and error handling for OAuth2 Credentials and JWT expiry, no more finding error in a haystack.
-- Extended Classroom Schedule, from the first session to last session!
-- Generate iCalendar file format for your classroom schedule, easily import it to any calendar application! **(coming soon)**
-- Extended Attendance Status, showing attendance information such as lowest, highest, and mean attendance rate for all available months! **(coming soon)**
-- Robust Notifications API for viewing, search filtering, page and limit pagination, and sorting unread/archived. **(coming soon)**
-- Pleasant RU(Read, Update) sub-resources routes for updating profile, changing password, creating a leave application, requesting a document, and many more! **(coming soon)**
-- Totally asynchronous and non-blocking code, optimised for speed and performance.
- 
-## Installation
-### Requirements
+## Documentation
 
-- macOS 10.9+ / Linux
-- [Node.js](https://nodejs.org/) `>=8` (6.x and 7.x may work but is no longer tested, please upgrade)
+The entry file of the application is dist/index.js, it initializes the server object and call start() function to start the server.
 
+Subsequently, it will output to stdout of the server url and environment.
 
+### Server
 
-1. Create a folder to hold your installation: `mkdir kaplan360-api`
-2. FTP/Copy the contents of the zip to your newly created folder
-3. Enter folder: `cd kaplan360-api`
-4. Install dependencies: `npm install`
-5. Start application: `npm start --production`
-6. Visit [http://127.0.0.1:8888](http://127.0.0.1:8888) in your browser
+server.ts is responsible for configuring the port and host of the application, registering plugins, and initiating APIs.
 
+### API
 
-Keeping kaplan360-api running after closing the terminal can be done in a few ways but we recommend using the `PM2` package. To set this up:
-
-1. Install PM2: `npm install pm2 -g`
-2. Add kaplan360-api to PM2: `NODE_ENV=production pm2 start src/app.js --name "kaplan360-api"`
-3. Check PM2 has our app: `pm2 list`
-4. Save the PM2 config: `pm2 save`
-5. To start/stop: `pm2 start kaplan360-api` / `pm2 stop kaplan360-api`
-
-> Note: Node.js version 7.x or greater is needed.
-
-
-## Tests
-```sh
-npm test
+Each API will stay in its own directory and sub directory. For Session API, it's located in api/session. The Services directory provides out-of-the-box modular functions for APIs. Under the Session API, Session Authorization API can call GetSessionAuthorization() using the statement below. 
+```
+await Services.Session.Kaplan.GetSessionAuthorization(username, password)
 ```
 
-## API Documentation
- 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/7506917/SVSBxDd6?version=latest)
+### Route
 
-**Example Response**
-```bash
-curl -X POST -H "Content-Length: 0" https://kaplan365.tk/api/session?username=CT1234567&password=supersecurepass
+The routes is responsible for accepting incoming requests and pass it to the corresponding controller. In addition, it is also responsible for performing validation of path parameters, queries, payload, headers, and response. Here is an example of the uri of Session Authorization API. 
+```
+/api/{gateway}/session/authorize
 ```
 
-```json
+### Controller
+
+The controller is responsible for handling the main business logic, it will return response according to the incoming request queries, parameters, or payload.
+```
+Services.Session.{gateway}.GetSessionAuthorization(username, password)
+```
+
+### Schema
+
+The schema is a Joi object for comparing two objects and validate if both is identical. In this case, the schema is responsible for validating response. Below is an example of the response of Session Authorization API, failing to validate will return a 500 internal server error.
+```
 {
-    "success": true,
-    "payload": {
-        "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOIsImtpZCI6InpoQm9mYlp3K2prWlpqWHMyOGZHZnp4WmdNOD0ifQ.eyJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImF6cCI6ImthcGxhbjM2MCIsInN1YiI6IkNUMDI4NjImF0X2hhc2giOiJWNUJ6UmJOdng4NHdlbElVR0JHZnZ3IiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5rYXBsYW4uY29tLnNnOjQ0My9hdXRoL29hdXRoMiIsIm9yZy5mb3JnZXJvY2sub3BlbmlkY29ubmVjdC5vcHMiOiJlZGJiNGIyNi00YWFhLTRiYWYtYmViNy0wMmEyMGFhOTgxMDEiLCJpYXQiOjE1NjIzNzEyMDQsImF1dGhfdGltZSI6MTU2MjM3MTIwNCwiZXhwIjoxNTYyNzMxMjA0LCJ0b2tlblR5cGUiOiJKV1RUb2tlbiIsImF1ZGl0VHJhY2tpbmdJZCI6Ijc1Y2E2YTA5LWY5ZDEtNDg3My1iODViLTE0NWYyZmUyNmI2OS0zNDEyNDkwMCIsInJlYWxtIjoiLyIsImF1ZCI6ImthcGxhbjM2MCJ9.bSJ-kcaM-lEgAVRu_MgGHgB_SXmPTZlQJ0uQ7FtMRNBx6dI_-6dsTT10Xi6URP6eXXyn4W6DANGc7F8R6me40csfePcw3IsemK6zUPB_pA9CfboY2tz0bVdVk02rm-XqNwX0besfbGvaienTKAYqksGzdWnnA8vsP4UA8IbGoDTX7hyf5vDMC1nWuPIcEHt1RVa0yojs8B13T4cqHIgnJ1qGuQnPF9HQ1TaZY01425D7WH9NnrIpjYTpj4cP4OI_5azmD3-o-WkJbc_YVxA0VZ_ivLcGqZLtN1e4RdNekqezlTxj-pU_eGjuQxqFw-xSMp"
-    }
+  success: Joi
+      .boolean()
+      .required(),
+  token: {
+    expires_in: Joi
+        .number()
+        .positive()
+        .integer()
+        .example('2591999')
+        .required(),
+    value: Joi
+        .string()
+        .trim()
+        .example('eyJ0eXAiOiJKV1QiLCJhbGciJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImF6cCI6ImthcGxhbjM2MCIsInN1YiI6IkNUMDI4NjQwMSIsImF0X2hhc2giOiJJNnZDQU5ZcWx1cjVoWU91MFN3REVBIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5rYXBsYW4uY29tLnNnOjQ0My9hdXRoL29hdXRoMiIsIm9yZy5mb3JnZXJvY2sub3BlbmlkY29ubmVjdC5vcHMiOiJmNTZmMjk0YS1iMDJlLTRmMWUtODNmMC1iYmQ1YmE4M2Q0NzEiLCJpYXQiOjE1NzkyNjM5MjYsImF1dGhfdGltZSI6MTU3OTI2MzkyNiwiZXhwIjoxNTc5NjIzOTI2LCJ0b2tlblR5cGUiOiJKV1RUb2tlbiIsImF1ZGl0VHJhY2tpbmdJZCI6Ijc1Y2E2YTA5LWY5ZDEtNxhbjM2MCJ9.WKiTSpthBZWz-H1v2c2rRpDjaXuV7aAgR3kjmKwQdRhqhOv27ylZ3o3qHTmbb9NFVy6sO1JcBzVo5WYtBQFxQZxdviLn7868FwZ8__gY5w-uP4DmMhebVC_Fmw3Ii8p9XVFhhRIpz7pQAMhpYXknBrVJYYnU1bF4AFxpMw')
+        .required(),
+    type: Joi
+        .string()
+        .valid('cookie', 'jwt')
+        .required()
+  }
 }
+``` 
+
+### Validator
+
+The validator is a Joi object for validating objects as well, but it's responsible for validating route headers, queries, and parameters. Below is an example of the credentials payload of Session Authorization APi.
 ```
- 
+{
+  username: Joi
+      .string()
+      .trim()
+      .example('CT0458796')
+      .description('Username')
+      .required(),
+  password: Joi
+      .string()
+      .example('supersecurepassword')
+      .description('Password')
+      .required()
+}
+``` 
+
 ## Credits
 
 Created and maintained by VEDDEV ([@veddev0x](https://github.com/veddev0x)).
 
 ## License
 
-`kaplan360-api` is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+`edugateway` is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+
+
+
  
